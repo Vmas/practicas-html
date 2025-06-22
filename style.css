@@ -61,7 +61,7 @@ display: none;
 }
 .header__nav{
     display: none;
-    background-image: linear-gradient(to bottom, rgb(120, 173, 118), #0009)  , url("/images/Comida-saludable-768x512.png");
+    background-image: linear-gradient(to bottom, rgb(120, 173, 118), #0009)  , url("images/Comida-saludable-768x512.png");
     filter: brightness(90%);
     height: 50vh;
     width: 100%;
