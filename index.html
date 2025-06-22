@@ -1,0 +1,269 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AliendoFit</title>
+        <link rel="icon" href="./images/Alienigenita.png" type="image/x-icon"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head> 
+
+
+<script>
+    // Espera a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecciona todos los enlaces dentro del nav
+        document.querySelectorAll('.header__nav a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Desmarca el checkbox del menú
+                document.getElementById('menu__toggle').checked = false;
+                document.getElementById('modal-close').checked = false;
+            });
+        });
+    });
+
+</script>
+
+<body>
+    
+    <header class="header">
+        
+        <div class="header__logo-conteiner">
+            <img class="header__logo" alt="logo de la web"  src="/images/fitcentergymtop.png">
+        </div>
+        <input class="header__checkbox" type="checkbox" id="menu__toggle">
+        <label class="header__open-nav-button" for="menu__toggle" role="button">=</label>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a class ="openModal" id="openModal" href="#profile"><label for="modal-close">Entrar</label></a></li>
+                <li class="header__nav-item"><a href="#">About</a></li>
+                <li class="header__nav-item"><a href="#portfolio">Instalaciones</a></li>
+                <li class="header__nav-item"><a href="#calch2">CalculadoraTMB</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main id="profile" class="profile">
+    <div class="profile__wrapper">   
+        <div class="profile__img-container"><img class="profile__img" src="/images/gymfitcenter.png" alt="imagen fitcenter"></div>
+        
+        
+        <div class="profile__data-container">   
+            
+                <div class="profile__data">
+                    
+                    <div class="profile__description"> 
+                        <h1 class="profile__name"><strong>¡Buil Muscles!</strong></h1>
+                        <p>¡Hola! somos Fit Center|gym, un espacio en constante evolución y traemos para ti este sitio web, para ayudarte en el área fitness. Diseñado para optimizar tu rendimiento y mejorar tu salud. Según tus objetivos: ya sea ganar masa muscular o perder peso, podras calcular tus calorías, medir tus requerimientos diarios de macronutrientes y tambien podras construir una rutina de entrenamiento. Encontraras diferentes recetas y suplementos para mejorar tu alimentación. <strong>¡Tu camino al cambio empieza aquí!</strong></p>
+                    </div>
+                    <div class="profile__skills-container">
+                        
+                        <h2>Recomposición Corporal:</h2>
+                        
+                        <ul>
+                            <li class="profile__skill">
+                                
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--50">50%</div>
+                                </div>       
+                                <span class="profile__skill-name">Alimento</span>
+                            </li>
+                            
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--30">30%</div>
+                                </div>
+                                <span class="profile__skill-name">Entreno</span>
+                            </li>
+                            
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--20">20%</div>
+                                </div>
+                                <span class="profile__skill-name">Descanso</span>
+                            </li>
+                            
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--100">100%</div>
+                                </div>
+                                <span class="profile__skill-name">TOTAL</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+    </main>
+      
+</div>    
+    <section class="galeria">    
+        <h2 id="portfolio" class="portfolio-title">Instalaciones</h2>
+        <div class="galery__container">
+            
+            
+            <img src="/images/mancuernasfit.png" alt="Imagen 1" onclick="abrirModal(this.src)">
+            <img src="/images/jalonespaldafit.png" alt="Imagen 2">
+            <img src="images/pesasespalda.png" alt="Imagen 3">
+            <img src="/images/smithfitc.png" alt="Imagen 4">
+            <img src="/images/badrooms.png" alt="Imagen 6">
+        <img src="/images/bikesfit.png" alt="Imagen 5">
+        
+    </div>
+</section>
+
+    <div class="espacio-calculadora">
+    <div id="calc" class="calculadora-title-container">
+    <h2 id="calch2" class="Calculadora--title">Calculadora de Tasa Metabólica Basal (TMB) </h2>
+    <p class="calculadora--ptmb">La Tasa Metabólica Basal (TMB) es la cantidad de energía que tu cuerpo necesita para mantener sus funciones vitales en reposo. Conocer tu TMB te ayudará a ajustar tu ingesta calórica según tus objetivos de salud y fitness.</p>
+    </div>
+    
+    <form  class="calculadora__form">    
+    <div class="calculadora">
+    <div>  
+        <label id="age-label" for="age">Edad:
+            <input class="calculadora__in" type="number" id="age" required>
+        </label>
+    </div>  
+
+    <div>
+        <label id="weight--label" for="weight">Peso (kg):
+            <input class="calculadora__in" type="number" id="weight" required>
+        </label>
+    </div>
+
+    <div>
+        <label id="height--label" for="height">Altura (cm):
+            <input class="calculadora__in" type="number" id="height" required>
+        </label>
+    </div>
+    
+    <div>
+        <label id="gender--label" for="gender">Género:
+            <select id="gender">
+                <option value="male">Hombre</option>
+                <option value="female">Mujer</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label id="actividad--fisica" for="actv">Actividad física:
+            <select id="actv">
+                <option value="1">Sedentario</option>
+                <option value="2">Ligero (1-3 días por semana)</option>
+                <option value="3">Moderado (3-5 días por semana)</option>
+                <option value="4">Fuerte(6-7 días por semana)</option>
+            </select>
+        </label>
+    </div>
+
+    <div>
+        <button class="calculadora_btn" id="calculadora__button" onclick="calculateTMB()">Calcular</button>
+        <button class="calculadora_btn" onclick="limpiarCampos()">Borrar</button>
+    </div>
+
+</div>
+</form>
+<h3 id="result"></h3>
+</div>
+
+    <script>
+    function calculateTMB() {
+    const age = document.getElementById('age').value;
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const gender = document.getElementById('gender').value;
+    const actv = document.getElementById('actv').value;
+    event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    let tmb;
+
+    if (age === '' || weight === '' || height === '') {
+        document.getElementById('result').innerHTML = '<p class="error">Por favor, completa todos los campos.</p>';
+        return;
+    }
+
+    if (gender === "male") {
+        tmb = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
+        losscalories = tmb - 300; // Hombres: -300 para perder peso
+        gaincalories = tmb + 340; // Igual para ambos
+
+    } else {
+        tmb = 460.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
+        losscalories = tmb - 200; // Mujeres: -200 para perder peso
+        gaincalories = tmb + 200; // Igual para ambos
+    }
+    if (actv === "1"){
+        tmb = (tmb*1.1163)
+    } else if (actv ==="2"){
+        tmb = (tmb*1.279)
+    } else if (actv ==="3"){
+        tmb = (tmb*1.441)
+    } else{
+        tmb = (tmb*1.6045)
+    }
+
+    
+// Recalcula las calorías después de ajustar por actividad física
+if (gender === "male") {
+    losscalories = tmb - 304;
+    gaincalories = tmb + 307;
+} else {
+    losscalories = tmb - 200;
+    gaincalories = tmb + 200;
+}
+
+    document.getElementById('result').innerHTML = `<p>Tu TMB es <strong> ${tmb.toFixed(2)} kcal/día </strong></p>
+    <p>Para perder peso, debes consumir alrededor de <strong>${losscalories.toFixed(2)} kcal/día</strong>.</p>
+    <p>Para ganar masa muscular, debes consumir alrededor de <strong>${gaincalories.toFixed(2)} kcal/día</strong>.</p>`;
+    
+    }
+    function limpiarCampos() {
+        document.getElementById('age').value = '';
+        document.getElementById('weight').value = '';
+        document.getElementById('height').value = '';
+        document.getElementById('gender').value='';
+        document.getElementById('actv').value='';
+        document.getElementById('result').innerHTML = '';
+    }
+    </script>
+    
+<input type="checkbox" id="modal-close" class="modal-close">  
+<div id="modal" class="modal">
+<div class="modal-content">
+    <label for = "modal-close" class="close"></label>
+    <h2>Inicio de seción</h2>
+    <form>
+        
+    <label for="email">Correo:</label>
+    <input type="email" id="email" required>
+    
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" required>
+    
+    <button class="modal-register" type="submit">Ingresar</button>
+    
+    <a class="olvidaste" href="">Olvidaste tu Contraseña</a>
+    <a class="volver" href="/registro.html">Registrate</a>
+    </form>
+</div>
+</div>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Fit Center Gym. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a class ="media--item" href="https://facebook.com/luiskrlo15v" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i>Facebook</a> |
+                <a class ="media--item" href="https://Wa.me/584127196000" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i>Whatsapp</a> |
+                <a class ="media--item" href="https://instagram.com/fitcentergym_" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i>Instagram</a>
+            </div>
+        </div>
+    </footer> 
+     
+</body>
+</html>

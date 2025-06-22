@@ -1,0 +1,43 @@
+/* Estilos globales */
+body {
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #111; /* Fondo principal */
+}
+img{
+    width: 150px;
+}
+/* Header */
+header {
+     /* Fondo del encabezado */
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 3px 30px #0df6;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+section {
+    border: 2px solid #0df6; /* Bordes con el color solicitado */
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #222; /* Fondo de los elementos individuales */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+ /* Fondo del pie de página */
+}
