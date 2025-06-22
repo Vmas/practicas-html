@@ -21,9 +21,23 @@
                 document.getElementById('menu__toggle').checked = false;
                 document.getElementById('modal-close').checked = false;
             });
+        
         });
     });
-
+document.addEventListener('click', function(event) {
+    const menuToggle = document.getElementById('menu__toggle');
+    const nav = document.querySelector('.header__nav');
+    const button = document.querySelector('.header__open-nav-button');
+    // Si el menú está abierto y el clic NO es sobre el nav ni el botón hamburguesa
+    if (
+        menuToggle.checked &&
+        !nav.contains(event.target) &&
+        !button.contains(event.target) &&
+        event.target !== menuToggle
+    ) {
+        menuToggle.checked = false;
+    }
+});
 </script>
 
 <body>
