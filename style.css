@@ -30,7 +30,9 @@ body, div, ul, nav, header, footer, a, li, label{
 }
 
 .header{
-    max-width: 100%;
+    
+    width: 100%;
+    margin: 0 auto;
     height: 80px;
     display: flex;
     background-color:#0b7205;
@@ -60,10 +62,11 @@ display: none;
 
 }
 .header__nav{
+    
     display: none;
     background-image: linear-gradient(to bottom, rgb(120, 173, 118), #0009) , url("images/Comida-saludable-768x512.png");
     filter: brightness(90%);
-    height: 50vh;
+    height: auto;
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -82,7 +85,7 @@ display: none;
     gap: 30px;
     color: #fff;
     margin-top: 100px;
-    
+    padding: 20px   
 }
 .header__nav-list a{
     text-decoration: none;
@@ -93,20 +96,24 @@ display: none;
     text-decoration: underline;
     
 }
-
+.header__nav-list:first-child label:hover{
+    cursor: pointer;
+}
 /*-----------header querys-------------*/
     
 
-    @container header (min-width: 600px){
+    @container header (min-width: 900px){
 
 
         .header__nav{
+            
             position: static;
             height: auto;
             width: auto;
             display: flex;
-            margin-right: 20px;
+            margin-right: 40px;
             background-image: none;
+            align-items: center;
         }
     
         
@@ -454,18 +461,17 @@ height: 100%;
 background: rgba(0, 0, 0, 0.6);
 justify-content: center;
 align-items: center;
-
 }
 
 .modal-content {
-background-image:radial-gradient(circle at 50% 400%, #fff, #045c1d);
-padding: 10px 10px;
-border-radius: 8px;
-width: 300px;
-max-width: 600px;
-text-align: center;
-margin: 0 10px;
-color: #fff;
+    background-image:radial-gradient(circle at 50% 400%, #fff, #045c1d);
+    padding: 10px 10px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 10px;
+    color: #fff;
 }
 .modal-content input{
     width: 100%;
@@ -475,7 +481,7 @@ color: #fff;
     border: none;
     box-shadow: 2px 4px 2px #0003;
 }
-.modal-register{
+.buttom-ingreso{
     margin-bottom: 20px;
     border-radius: 10px;
     width: 100%;
@@ -485,7 +491,7 @@ color: #fff;
     padding: 8px;
     box-shadow:  2px 4px 2px #0003;
 }
-.modal-register:hover{
+.buttom-ingreso:hover{
     background-color: #033800;
     cursor: pointer;
     font-weight: 600;
@@ -506,17 +512,67 @@ z-index: -1;
     display: flex;
     }
 
-.modal a{
-    color: #a2ebf0;
-    margin-top: 20px;
-    padding: 20px;
-    text-decoration: none;
-}
-.modal a:hover{
+    .modal a{
+        color: #a2ebf0;
+        margin-top: 20px;
+        padding: 20px;
+        text-decoration: none;
+    }
+    .modal a:hover{
     color:#fff;
     text-decoration: underline;
-}
+    }
 /* ventana modal end----------*/
+
+/*formulario de registro star*/
+
+.registro-container{
+background-image: #181818 linear-gradient(90deg, #fff, #100f0f);
+background-color: #e0dbdb;
+padding: 20px;
+display: none;
+}
+.registro-container:target{
+    display: block;
+}
+.formulario-registro h2{
+    align-self: center;
+    font-size: 2rem;
+    
+}
+.formulario-registro{
+    scroll-margin-top: 80px;
+    background-color: #e0dbdb;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 20px #0003;
+    width: 78%;
+    max-width: 600px;
+    font-weight: bolder;
+    gap:12px
+}
+.formulario-registro :is(input,select){
+    padding: 6px;
+    border-radius: 4px;
+    width: 100%;
+    border:none;
+    box-shadow: 2px 4px 2px #0003;
+    
+}
+.registro-buttom{
+    background-color: #0b7205;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin:4px 0px
+}
 
 
 /* Footer section start----------*/
