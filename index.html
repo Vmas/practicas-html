@@ -249,60 +249,9 @@ if (gender === "male") {
         document.getElementById('result').innerHTML = '';
     }
     </script>
-<!--cerrando el modal de inciar secion al hacer click en registrarse-->
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var goRegister = document.getElementById('go-register');
-    var modalClose = document.getElementById('modal-close');
-    if(goRegister && modalClose) {
-        goRegister.addEventListener('click', function() {
-            // Cierra el modal de ingresar
-            modalClose.checked = false;
-            // Opcional: puedes hacer scroll al formulario de registro
-            var registro = document.getElementById('registrarse-container');
-            if(registro) {
-                registro.scrollIntoView({behavior: "smooth"});
-            }
-        });
-    }
-});
-</script>
-<!--cerrando el formulario de registro al actualizar la pagina-->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Oculta el formulario de registro siempre al cargar la página
-    var registro = document.getElementById('registrarse-container');
-    if (registro) {
-        registro.style.display = 'none';
-    }
 
-    // Mostrar el formulario solo al hacer clic en "Registrate"
-    var goRegister = document.getElementById('go-register');
-    if(goRegister && registro) {
-        goRegister.addEventListener('click', function(e) {
-            e.preventDefault();
-            registro.style.display = 'block';
-            // Opcional: hacer scroll al formulario
-            registro.scrollIntoView({behavior: "smooth"});
-        });
-    }
-});
-</script>
-<!--Aqui se muestra el formulario de registro al hacer click en el nav bar registrarse o en el menu burger-->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var navbarRegister = document.getElementById('registrarse-link');
-    var registro = document.getElementById('registrarse-container');
-    if(navbarRegister && registro) {
-        navbarRegister.addEventListener('click', function(e) {
-            e.preventDefault();
-            registro.style.display = 'block';
-            registro.scrollIntoView({behavior: "smooth"});
-        });
-    }
-});
-</script>
-    
+   
+
 <input type="checkbox" id="modal-close" class="modal-close">  
 <div id="modal" class="modal">
 <div class="modal-content">
@@ -368,6 +317,47 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </footer> 
-     
+     <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var registro = document.getElementById('registrarse-container');
+    if (registro) {
+        registro.style.display = 'none';
+    }
+
+    // Mostrar el formulario solo al hacer clic en "Registrate" del modal
+    var goRegister = document.getElementById('go-register');
+    var modalClose = document.getElementById('modal-close');
+    if(goRegister && registro) {
+        goRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            registro.style.display = 'block';
+            registro.scrollIntoView({behavior: "smooth"});
+            // Si quieres cerrar el modal de login:
+            if(modalClose) modalClose.checked = false;
+        });
+    }
+
+    // Mostrar el formulario solo al hacer clic en "Registrarse" del navbar
+    var navbarRegister = document.getElementById('registrarse-link');
+    if(navbarRegister && registro) {
+        navbarRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            registro.style.display = 'block';
+            registro.scrollIntoView({behavior: "smooth"});
+        });
+    }
+
+    // Ocultar el formulario de registro al hacer clic en cualquier otro enlace del menú
+    document.querySelectorAll('.header__nav a').forEach(function(link) {
+        if (link.id !== 'registrarse-link' && link.id !== 'go-register') {
+            link.addEventListener('click', function() {
+                if (registro) {
+                    registro.style.display = 'none';
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
